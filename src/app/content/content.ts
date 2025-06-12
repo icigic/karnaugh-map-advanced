@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentItem } from "../content-item/content-item";
 import { KMapFeature } from '../kmap-feature';
+import { FeatureService } from '../features/feature-service';
 
 @Component({
   selector: 'app-content',
@@ -10,20 +11,10 @@ import { KMapFeature } from '../kmap-feature';
   styleUrl: './content.css'
 })
 export class Content {
-  rade: KMapFeature = {
-    text: 'This is a content item.',
-    imageUrl: 'assets/KMap1.png'
+  kMapFeatures: KMapFeature[] = [];
+  featuresService: FeatureService = inject(FeatureService);
+
+  constructor() { 
+    this.kMapFeatures = this.featuresService.getAllFeatures();
   }
-  kMapFeatures: KMapFeature[] = [
-    {
-      text: 'This is a content item.',
-      imageUrl: 'assets/KMap1.png'
-    }, {
-      text: 'This is another content item.',
-      imageUrl: 'assets/KMap2.png'
-    }, {
-      text: 'This is a third content item.',
-      imageUrl: 'assets/KMap3.png'
-    },
-  ];
 }
