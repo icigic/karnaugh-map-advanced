@@ -10,13 +10,13 @@ export class FeatureService {
 
   protected kMapFeatures: KMapFeature[] = [
     {
-      text: 'This is a content item.',
+      text: 'Minimize your logic circuits with Karnaugh Maps',
       imageUrl: 'assets/KMap1.png'
     }, {
-      text: 'This is another content item.',
+      text: 'Enter logic functions or truth tables',
       imageUrl: 'assets/KMap2.png'
     }, {
-      text: 'This is a third content item.',
+      text: 'See all possible solutions',
       imageUrl: 'assets/KMap3.png'
     },
   ];
